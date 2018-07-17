@@ -260,6 +260,16 @@ pipeline:
       status: success
       event: tag
 
+  codecov:
+    image: node:9-alpine
+    commands:
+      - export CODECOV_TOKEN=$CODECOV_TOKEN
+      - ./node_modules/.bin/lerna run codecov --parallel
+    secrets: [ codecov_token ]
+    when:
+      status: success
+      branch: [hotfix/*, release/*, feature/*, support/*, develop]
+
   notify:
     image: plugins/slack
     webhook: https://hooks.slack.com/services/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
