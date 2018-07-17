@@ -8,9 +8,17 @@ pipeline:
       - npm install
       - npm run bootstrap
       - npm run coverage
+      - npm run coverage:report
       - npm run test
       - npm run clean:public
     when:
+      event: [push, tag]
+
+  codecov:
+    image: plugins/codecov
+    secrets: [ codecov_token ]
+    when:
+      status: success
       event: [push, tag]
 
   staging-build:
@@ -260,15 +268,6 @@ pipeline:
     when:
       status: success
       event: tag
-
-  codecov:
-    image: plugins/codecov
-    secrets: [ codecov_token ]
-    commands:
-      - npm run coverage:report
-    when:
-      status: success
-      event: [push, tag]
 
   notify:
     image: plugins/slack
