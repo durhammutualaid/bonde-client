@@ -8,7 +8,7 @@
     "test:lint": "standard && NODE_ENV=test node --max_old_space_size=4096 ./node_modules/.bin/jest",
     "testx": "yarn test:lint --ci --silent --runInBand --logHeapUsage",
     "test:watch": "yarn test:lint -- --watch",
-    "coverage": "NODE_ENV=test nyc --reporter=text-summary node --max_old_space_size=4096 ./node_modules/.bin/jest --ci --silent --runInBand --logHeapUsage",
+    "coverage": "NODE_ENV=test nyc --reporter=text-summary node --max_old_space_size=4096 ./node_modules/.bin/jest --ci --silent",
     "codecov": "nyc report --reporter=text-lcov > coverage.lcov",
     "dev": "webpack-dev-server --config ./tools/webpack.dev.js",
     "start": "serve -s public",
@@ -29,6 +29,7 @@
   "keywords": [],
   "license": "GPL-3.0",
   "dependencies": {
+    "@istanbuljs/nyc-config-babel": "1.2.3",
     "@storybook/addon-actions": "3.4.8",
     "autodll-webpack-plugin": "0.3.8",
     "axios": "0.18.0",

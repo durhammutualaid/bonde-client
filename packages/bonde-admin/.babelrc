@@ -26,7 +26,17 @@
       "presets": ["react-optimize"],
       "plugins": [
         "transform-react-stateless-component-name",
-        ["istanbul", { "exclude": ["**/*.spec.js"] }]
+        ["istanbul", {
+          "extends": "@istanbuljs/nyc-config-babel",
+          "all": true,
+          "cache": true,
+          "exclude": [
+            "**/*.spec.js",
+            "build",
+            "intl/locale-data",
+            "tools"
+          ]
+        }]
       ]
     },
     "production": {

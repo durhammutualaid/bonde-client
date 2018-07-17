@@ -6,19 +6,12 @@ pipeline:
     image: node:9-alpine
     commands:
       - npm install
-      - ./node_modules/.bin/lerna bootstrap
-      - ./node_modules/.bin/lerna run test --parallel
-      - rm -rf ./packages/bonde-public/.next
+      - npm run bootstrap
+      - npm run coverage
+      - npm run test
+      - npm run clean:public
     when:
       event: [push, tag]
-
-  coverage:
-    image: node:9-alpine
-    commands:
-      - ./node_modules/.bin/lerna run coverage --parallel
-    when:
-      status: success
-      branch: [hotfix/*, release/*, feature/*, support/*, develop]
 
   staging-build:
     image: node:9-alpine

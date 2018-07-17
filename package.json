@@ -1,7 +1,10 @@
 {
   "scripts": {
-    "test:coverage:fast": "lerna run coverage --parallel",
-    "codecov": "lerna run codecov --parallel && codecov --token=$CODECOV_TOKEN"
+    "bootstrap": "lerna bootstrap",
+    "test": "lerna run test --parallel",
+    "coverage": "lerna run coverage --parallel",
+    "codecov": "lerna run codecov --parallel && codecov --token=$CODECOV_TOKEN",
+    "clean:public": "rm -rf ./packages/bonde-public/.next"
   },
   "devDependencies": {
     "lerna": "^2.7.1"
