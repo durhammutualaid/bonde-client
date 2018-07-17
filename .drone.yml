@@ -15,7 +15,7 @@ pipeline:
   coverage:
     image: node:9-alpine
     commands:
-      - ./node_modules/.bin/lerna run test:coverage:fast --parallel
+      - ./node_modules/.bin/lerna run coverage --parallel
     when:
       status: success
       branch: [hotfix/*, release/*, feature/*, support/*, develop]

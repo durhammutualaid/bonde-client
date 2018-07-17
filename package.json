@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test:coverage:fast": "lerna run test:coverage:fast --parallel",
+    "test:coverage:fast": "lerna run coverage --parallel",
     "codecov": "lerna run codecov --parallel && codecov --token=$CODECOV_TOKEN"
   },
   "devDependencies": {
