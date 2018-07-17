@@ -8,7 +8,7 @@
     "test:lint": "standard && node --max_old_space_size=4096 ./node_modules/.bin/jest",
     "testx": "yarn test:lint --ci --silent --runInBand --logHeapUsage",
     "test:watch": "yarn test:lint -- --watch",
-    "test:coverage": "nyc yarn test",
+    "test:coverage": "nyc node --max_old_space_size=4096 ./node_modules/.bin/jest --ci --silent --runInBand --logHeapUsage",
     "dev": "webpack-dev-server --config ./tools/webpack.dev.js",
     "start": "serve -s public",
     "buildx": "webpack --colors --hide-modules --bail -p --config ./tools/webpack.prod.js",
