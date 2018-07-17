@@ -262,14 +262,13 @@ pipeline:
       event: tag
 
   codecov:
-    image: node:9-alpine
-    commands:
-      - export CODECOV_TOKEN=$CODECOV_TOKEN
-      - ./node_modules/.bin/lerna run codecov --parallel
+    image: plugins/codecov
     secrets: [ codecov_token ]
+    commands:
+      - npm run coverage:report
     when:
       status: success
-      branch: [hotfix/*, release/*, feature/*, support/*, develop]
+      event: [push, tag]
 
   notify:
     image: plugins/slack

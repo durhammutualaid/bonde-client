@@ -9,7 +9,7 @@
     "testx": "yarn test:lint --ci --silent --runInBand --logHeapUsage",
     "test:watch": "yarn test:lint -- --watch",
     "coverage": "NODE_ENV=test nyc --reporter=text-summary node --max_old_space_size=4096 ./node_modules/.bin/jest --ci --silent",
-    "codecov": "nyc report --reporter=text-lcov > coverage.lcov",
+    "coverage:report": "nyc report --reporter=text-lcov > coverage.lcov",
     "dev": "webpack-dev-server --config ./tools/webpack.dev.js",
     "start": "serve -s public",
     "buildx": "webpack --colors --hide-modules --bail -p --config ./tools/webpack.prod.js",
