@@ -26,7 +26,7 @@
       "presets": ["react-optimize"],
       "plugins": [
         "transform-react-stateless-component-name",
-        "istanbul",
+        ["istanbul", { "exclude": ["**/*.spec.js"] }]
       ]
     },
     "production": {
