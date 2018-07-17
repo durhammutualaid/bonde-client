@@ -1,5 +1,12 @@
 {
-    "devDependencies": {
-            "lerna": "^2.7.1"
-    }
+  "scripts": {
+    "test:coverage:fast": "lerna run test:coverage:fast --parallel",
+    "codecov": "lerna run codecov --parallel && codecov --token=$CODECOV_TOKEN"
+  },
+  "devDependencies": {
+    "lerna": "^2.7.1"
+  },
+  "dependencies": {
+    "codecov": "3.0.4"
+  }
 }
