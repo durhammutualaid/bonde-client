@@ -12,6 +12,14 @@ pipeline:
     when:
       event: [push, tag]
 
+  coverage:
+    image: node:9-alpine
+    commands:
+      - ./node_modules/.bin/lerna run test:coverage:fast --parallel
+    when:
+      status: success
+      branch: [hotfix/*, release/*, feature/*, support/*, develop]
+
   staging-build:
     image: node:9-alpine
     group: building
