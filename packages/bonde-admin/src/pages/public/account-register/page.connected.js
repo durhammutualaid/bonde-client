@@ -4,7 +4,8 @@
 import { connect } from 'react-redux'
 import { reduxForm } from 'redux-form'
 import { injectIntl } from 'react-intl'
-import { gql, graphql } from 'react-apollo'
+import gql from 'graphql-tag'
+import { graphql } from 'graphql'
 import queryString from 'query-string'
 
 import { isValidEmail } from '@/utils/validation-helper'
