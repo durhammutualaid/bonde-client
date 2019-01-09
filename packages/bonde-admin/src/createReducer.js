@@ -8,9 +8,6 @@ import { normalizer as recurringForm } from '@/subscriptions/forms/recurring-for
 // Reapop
 import { reducer as notificationsReducer } from 'reapop'
 
-// Apollo
-import { client } from './store'
-
 // Application
 import auth from '@/account/redux/reducers'
 import wait from '@/components/await/redux/reducers'
@@ -36,7 +33,6 @@ export default function createReducer (asyncReducers) {
       creditCardForm,
       recurringForm
     }),
-    apollo: client().reducer(),
     notifications: notificationsReducer(),
     auth,
     wait,
