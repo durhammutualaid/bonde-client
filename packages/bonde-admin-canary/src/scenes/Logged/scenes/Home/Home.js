@@ -9,7 +9,6 @@ import { Auth } from 'services/auth'
 import {
   CommunitiesGadget,
   MobilizationsGadget,
-  TrendingMobilizationsGadget
 } from './components'
 
 const TutorialDialog = ({ children, step, t, ...props }) => (
@@ -70,11 +69,6 @@ export default class extends React.Component {
                               </TutorialDialog>
                             </Cell>
                           </Grid>
-                        </Cell>
-                        <Cell size={[12, 12, 12, 12, 12, 12]}>
-                          <TutorialDialog t={t} step={4} placement='top-left'>
-                            <TrendingMobilizationsGadget />
-                          </TutorialDialog>
                         </Cell>
                       </Grid>
                     </Flexbox>
