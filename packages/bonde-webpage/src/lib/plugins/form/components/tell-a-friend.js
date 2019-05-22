@@ -1,8 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { bool, object } from 'prop-types'
 import { FormattedMessage } from 'react-intl'
 
-import * as paths from '../../../paths'
 import { TellAFriendBase } from '../../../ux'
 
 const FormTellAFriend = ({ preview, mobilization, widget, ...props }) => (
@@ -16,15 +15,19 @@ const FormTellAFriend = ({ preview, mobilization, widget, ...props }) => (
         defaultMessage='Formulário submetido com sucesso!'
       />
     }
-    href={paths.mobilization(mobilization)}
+    href={
+      mobilization.custom_domain
+      ? `http://${mobilization.custom_domain}`
+      : `http://${mobilization.slug}.${domain}`
+    }
     {...props}
   />
 )
 
 FormTellAFriend.propTypes = {
-  preview: PropTypes.bool,
-  mobilization: PropTypes.object.isRequired,
-  widget: PropTypes.object.isRequired
+  preview: bool,
+  mobilization: object.isRequired,
+  widget: object.isRequired
 }
 
 export default FormTellAFriend

@@ -1,11 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { any, bool, shape, string } from 'prop-types'
 import { FormattedMessage } from 'react-intl'
 import FacebookShareButton from './facebook-share-button'
 import TwitterShareButton from './twitter-share-button'
 import WhatsAppShareButton from './whatsapp-share-button'
-
-// import checkMarkImage from './'
 
 const TellAFriend = ({
   preview,
@@ -18,8 +16,8 @@ const TellAFriend = ({
   imageWidth,
   widget
 }) => {
+  console.log(href)
   const settings = widget.settings || {}
-
   return (
     <div className='center p3 bg-white darkengray rounded'>
       <div className='m0 h3 bold'>{message}</div>
@@ -38,8 +36,6 @@ const TellAFriend = ({
     </div>
   )
 }
-
-const { any, bool, shape, string, object } = PropTypes
 
 TellAFriend.propTypes = {
   preview: bool,
