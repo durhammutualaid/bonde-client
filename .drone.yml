@@ -6,8 +6,8 @@ pipeline:
     image: node:10-alpine
     commands:
       - yarn
-      - yarn lerna bootstrap
-      - yarn lerna run coverage
+      - ./node_modules/.bin/lerna bootstrap
+      - ./node_modules/.bin/lerna run coverage
       - cd packages/bonde-public && rm -rf node_modules && yarn
     when:
       event: [push, tag]
