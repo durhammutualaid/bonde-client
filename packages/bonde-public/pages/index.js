@@ -21,7 +21,7 @@ import {
   asyncFilterBlock,
   asyncFilterWidget
 } from 'bonde-webpage/lib/redux/action-creators'
-import MobilizationApp from './mobilization.connected'
+import MobilizationApp from '../mobilization.connected'
 import styles from 'bonde-webpage/lib/styles/main.scss'
 
 const { publicRuntimeConfig } = getConfig()
