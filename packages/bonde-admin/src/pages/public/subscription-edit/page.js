@@ -167,7 +167,7 @@ class SubscriptionEditPage extends React.Component {
             })}
 
             <p className='link--cancel center mt3 lightgray link'>
-              <a href='/confirm'
+              <a href='#confirm'
                 style={{ color: '#999999' }}
                 onClick={() => {
                   const message = intl.formatMessage({
