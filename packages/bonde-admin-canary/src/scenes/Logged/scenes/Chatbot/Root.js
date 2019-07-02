@@ -18,9 +18,9 @@ export default withRouter(({ match, history }) => {
   }
 
   return (
-    <Page
+    <Page 
       renderTitle={() => <Header.Title>BETA</Header.Title>}
-      renderMenuCommunity={() => <div>bonde</div>}
+      renderMenuCommunity={() => <div>test</div>}
     >
       <Query 
         query={ChatbotAPI.query.campaigns}

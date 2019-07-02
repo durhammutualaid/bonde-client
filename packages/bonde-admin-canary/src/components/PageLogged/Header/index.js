@@ -28,16 +28,28 @@ const Header = ({
   renderMenuCommunity
 }) => (
   <HeaderStyleguide> 
-    <Navbar renderBrand={Bonde}>
-      <Flexbox horizontal end>
-        <UserDropdown />
-      </Flexbox>
-    </Navbar>
+    {!renderMenuCommunity && (
+      <Navbar renderBrand={Bonde}>
+        <Flexbox horizontal end>
+          <UserDropdown />
+        </Flexbox>
+      </Navbar>
+    )}
 
     {renderMenuCommunity && (
-      <MenuCommunity>
-        Links
-      </MenuCommunity>
+      <Spacing margin={{ bottom: 16 }}>
+        <Navbar>
+          <Flexbox horizontal>
+            <CommunitiesDropdown />
+            <MenuCommunity>
+              {renderMenuCommunity()}
+            </MenuCommunity>
+          </Flexbox>
+          <Flexbox horizontal end>
+            <UserDropdown />
+          </Flexbox>
+        </Navbar>
+      </Spacing>
     )}
 
     {renderActionButtons && (
@@ -76,6 +88,8 @@ Header.ActionButton = ActionButton
 Header.ActionButtonGroup = Flexbox
 
 Header.CommunitiesDropdown = CommunitiesDropdown
+
+Header.MenuCommunity = MenuCommunity
 
 Header.Tab = Tab
 
