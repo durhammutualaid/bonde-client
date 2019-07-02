@@ -8,6 +8,7 @@ const Page =  ({
   renderTitle,
   renderActionButtons,
   renderTabs,
+  renderMenuCommunity,
   wrapperHeaderComponent: WrapperHeader,
   bgColor,
   fixedFooter,
@@ -23,6 +24,7 @@ const Page =  ({
       renderTitle={renderTitle}
       renderActionButtons={renderActionButtons}
       renderTabs={renderTabs}
+      renderMenuCommunity={renderMenuCommunity}
     />
   )
 

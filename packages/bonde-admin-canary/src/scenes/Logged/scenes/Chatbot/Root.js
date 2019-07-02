@@ -7,7 +7,6 @@ import ChatbotAPI from './graphql'
 import FlowsScene from './scenes/Flows'
 import EditGraphScene from './scenes/EditGraph'
 
-
 export default withRouter(({ match, history }) => {
   const [campaign, setCampaign] = useState(undefined)
 
@@ -19,8 +18,14 @@ export default withRouter(({ match, history }) => {
   }
 
   return (
-    <Page renderTitle={() => <Header.Title>BETA</Header.Title>}>
-      <Query query={ChatbotAPI.query.campaigns} variables={{ communityId: Number(match.params.id) }}>
+    <Page
+      renderTitle={() => <Header.Title>BETA</Header.Title>}
+      renderMenuCommunity={() => <div>bonde</div>}
+    >
+      <Query 
+        query={ChatbotAPI.query.campaigns}
+        variables={{ communityId: Number(match.params.id) }}
+      >
         {({ loading, error, data }) => {
           if (loading) return 'Loading...'
           if (error) return 'Error!!'
