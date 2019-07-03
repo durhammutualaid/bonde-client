@@ -12,7 +12,7 @@ import TableCardGadget from '../TableCardGadget'
 import { authSession } from 'services/auth'
 import { toSnakeCase } from '../../utils'
 import userCommunitiesQuery from './query'
-import { IconBot, IconOpen } from '../../../../../../components/PageLogged/Header/MenuCommunity/icons/'
+import { IconBot, IconPage } from '../../../../../../components/PageLogged/Header/MenuCommunity/icons/'
 
 const goToAdmin = (row) => (
   <Button
@@ -27,7 +27,7 @@ const goToAdmin = (row) => (
       })
     }}
   >
-    <IconOpen size={18} color='black' />
+    <IconPage size={18} color='black' />
   </Button>
 )
 
