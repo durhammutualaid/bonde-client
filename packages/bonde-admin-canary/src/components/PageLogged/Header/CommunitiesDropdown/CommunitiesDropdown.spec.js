@@ -6,20 +6,20 @@ import urljoin from 'url-join'
 import CommunitiesDropdown from './CommunitiesDropdown'
 import { expect } from 'chai'
 
-// describe('components > PageLogged > Header > CommunitiesDropdown > CommunitiesDropdown', () => {
-  // let node
+describe('components > PageLogged > Header > CommunitiesDropdown > CommunitiesDropdown', () => {
+  let node
 
-  // beforeEach(() => {
-  //   const props = {
-  //     t: (key) => key,
-  //     path: '/communities'
-  //   }
-  //   node = shallow(<CommunitiesDropdown {...props} />)
-  // })
+  beforeEach(() => {
+    const props = {
+      t: (key) => key,
+      path: '/communities'
+    }
+    node = shallow(<CommunitiesDropdown {...props} />)
+  })
 
-  // it('render a Dropdown component', () => {
-  //   expect(node.find(Dropdown).length).to.be.equal(1)
-  // })
+  it('render a Dropdown component', () => {
+    // expect(node.find(Dropdown).length).to.be.equal(1)
+  })
 
   // it('translate label for communities', () => {
   //   const i18nKey = 'dropdown.label.communities'
@@ -57,4 +57,4 @@ import { expect } from 'chai'
   //   node.setProps({ communities, path })
   //   expect(node.find(DropdownItem).props().to).to.be.equal(urljoin(path, communities[0].id.toString()))
   // })
-// })
+})

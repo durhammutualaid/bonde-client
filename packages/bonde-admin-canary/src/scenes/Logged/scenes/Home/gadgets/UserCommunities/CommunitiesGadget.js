@@ -2,7 +2,8 @@ import React, { Fragment } from 'react'
 import {
   Text,
   Button,
-  Flexbox
+  Flexbox,
+  Spacing
 } from 'bonde-styleguide'
 import { Link } from 'react-router-dom'
 import { Query } from 'react-apollo'
@@ -11,7 +12,7 @@ import TableCardGadget from '../TableCardGadget'
 import { authSession } from 'services/auth'
 import { toSnakeCase } from '../../utils'
 import userCommunitiesQuery from './query'
-import IconBot from '../../../../../../components/PageLogged/Header/MenuCommunity/icons/icon-bot'
+import { IconBot, IconOpen } from '../../../../../../components/PageLogged/Header/MenuCommunity/icons/'
 
 const goToAdmin = (row) => (
   <Button
@@ -26,7 +27,7 @@ const goToAdmin = (row) => (
       })
     }}
   >
-    Admin
+    <IconOpen size={18} color='black' />
   </Button>
 )
 
@@ -36,7 +37,7 @@ const goToCanary = (row) => (
     flat
   >
     <Link to={`/admin/${row.id}/chatbot`}>
-      <IconBot color='black'/>
+      <IconBot size={25} color='black' />
     </Link>
   </Button>
 )
@@ -51,7 +52,7 @@ const columns = [
     field: 'text',
     render: ({ row }) => (
       <Fragment>
-        <Flexbox horizontal between> 
+        <Flexbox horizontal> 
           <div>
             <Text
               fontSize={16}
@@ -68,10 +69,10 @@ const columns = [
               {row.description || row.city}
             </Text>
           </div>
-          <div>
+          <Spacing margin={{ left: 12 }}>
             { goToAdmin(row) }
             { goToCanary(row) }
-          </div>
+          </Spacing>
         </Flexbox>
       </Fragment>
     )
