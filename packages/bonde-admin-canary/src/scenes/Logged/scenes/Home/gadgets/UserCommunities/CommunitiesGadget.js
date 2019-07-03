@@ -70,12 +70,10 @@ const columns = [
             </Text>
           </div>
           <Spacing margin={{ left: 12 }}>
-            { goToAdmin(row) }
-
             {row.id === '73' && (
               goToCanary(row)
             )}
-            
+            { goToAdmin(row) }
           </Spacing>
         </Flexbox>
       </Fragment>
