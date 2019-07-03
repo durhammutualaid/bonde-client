@@ -19,7 +19,7 @@ export default withRouter(({ match, history }) => {
 
   return (
     <Page 
-      renderTitle={() => <Header.Title>BETA</Header.Title>}
+      renderTitle={() => <Header.Title>Chatbot</Header.Title>}
       renderMenuCommunity={() => <div>test</div>}
     >
       <Query 
