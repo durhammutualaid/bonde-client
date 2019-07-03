@@ -72,7 +72,7 @@ const columns = [
           <Spacing margin={{ left: 12 }}>
             { goToAdmin(row) }
 
-            {row.id == '73' && (
+            {row.id === '73' && (
               goToCanary(row)
             )}
             
