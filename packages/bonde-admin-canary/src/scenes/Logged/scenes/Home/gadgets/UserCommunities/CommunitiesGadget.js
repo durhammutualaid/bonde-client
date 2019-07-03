@@ -71,7 +71,11 @@ const columns = [
           </div>
           <Spacing margin={{ left: 12 }}>
             { goToAdmin(row) }
-            { goToCanary(row) }
+
+            {row.id == '73' && (
+              goToCanary(row)
+            )}
+            
           </Spacing>
         </Flexbox>
       </Fragment>
