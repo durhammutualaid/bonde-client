@@ -4,11 +4,35 @@ import { Link } from 'react-router-dom'
 import { Dropdown, DropdownItem } from 'bonde-styleguide'
 import { Query } from 'react-apollo'
 import userCommunitiesQuery from './query'
+import { withRouter } from 'react-router'
+
+const ShowCommunity = ({ match }) => {
+  return (
+    <Query query={userCommunitiesQuery}>
+      {({ data, loading, error }) => {
+        if (loading) return 'Loading...'
+        if (error) return 'Error!'
+
+        const myCommunity = data.userCommunities.edges.map(i => {
+          if (i.node.id === match.params.id) return i.node.name
+        })
+
+        return (
+          <div>
+            {myCommunity}
+          </div>
+        )
+      }}
+    </Query>
+  )
+}
+
+const ShowCommunityWithRouter = withRouter(ShowCommunity)
 
 const CommunitiesDropdown = ({ t, loading, communities }) => (
   <Dropdown
     loading={loading}
-    label={t('dropdown.label.communities')}
+    label={<ShowCommunityWithRouter />}
     disabled={communities.length > 0 ? false : true}
   >
     {communities.map(c => {
