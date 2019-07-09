@@ -1,7 +1,15 @@
 {
-    "dropdown": {
-        "label": {
-        "communities": "Comunidades"
-        }
+  "dropdown": {
+    "label": {
+      "communities": "Comunidades"
     }
+  },
+  "flows": {
+    "createCampaign": {
+      "validations": {
+        "uniqueEntry": "Parâmetro {{field}} já foi utilizado anteriormente",
+        "noSpaces": "Parâmetro {{field}} não pode conter espaços"
+      }
+    }
+  }
 }

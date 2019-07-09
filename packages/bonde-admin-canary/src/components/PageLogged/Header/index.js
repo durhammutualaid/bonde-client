@@ -27,7 +27,7 @@ const Header = ({
   renderTabs,
   renderMenuCommunity
 }) => (
-  <HeaderStyleguide> 
+  <HeaderStyleguide>
     {!renderMenuCommunity && (
       <Navbar renderBrand={Bonde}>
         <Flexbox horizontal end>
@@ -80,7 +80,7 @@ Header.propTypes = {
   renderTitle: func,
   renderActionButtons: func,
   renderTabs: func,
-  renderMenuCommunity: func,
+  renderMenuCommunity: func
 }
 
 Header.ActionButton = ActionButton

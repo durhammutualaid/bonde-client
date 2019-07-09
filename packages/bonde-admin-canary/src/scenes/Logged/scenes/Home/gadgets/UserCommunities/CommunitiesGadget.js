@@ -20,11 +20,11 @@ const goToAdmin = (row) => (
     flat
     onClick={() => {
       authSession
-      .setAsyncItem('community', toSnakeCase(row))
-      .then(() => {
-        const baseUrl = process.env.REACT_APP_DOMAIN_ADMIN || 'http://app.bonde.devel:5001'
-        window.open(baseUrl, '_self')
-      })
+        .setAsyncItem('community', toSnakeCase(row))
+        .then(() => {
+          const baseUrl = process.env.REACT_APP_DOMAIN_ADMIN || 'http://app.bonde.devel:5001'
+          window.open(baseUrl, '_self')
+        })
     }}
   >
     <IconPage size={18} color='black' />
@@ -52,7 +52,7 @@ const columns = [
     field: 'text',
     render: ({ row }) => (
       <Fragment>
-        <Flexbox horizontal> 
+        <Flexbox horizontal>
           <div>
             <Text
               fontSize={16}
@@ -92,20 +92,32 @@ const CommunitiesGadget = ({ t, loading, communities }) => (
   />
 )
 
-export default ({ t }) => (
-  <Query query={userCommunitiesQuery}>
-  {({ data, loading, error }) => {
-    if (loading) return 'Loading...'
-    if (error) return 'Error!'
+CommunitiesGadget.propTypes = {
+  t: PropTypes.func,
+  loading: PropTypes.bool,
+  communities: PropTypes.array
+}
 
-    return (
-      <CommunitiesGadget
-        t={t}
-        loading={loading}
-        filter={{sort: 'updated_at_desc'}}
-        communities={data && data.userCommunities ? data.userCommunities.edges.map(i => i.node) : []}
-      />
-    )
-  }}
+const CommunitiesGadgetWrapper = ({ t }) => (
+  <Query query={userCommunitiesQuery}>
+    {({ data, loading, error }) => {
+      if (loading) return 'Loading...'
+      if (error) return 'Error!'
+
+      return (
+        <CommunitiesGadget
+          t={t}
+          loading={loading}
+          filter={{ sort: 'updated_at_desc' }}
+          communities={data && data.userCommunities ? data.userCommunities.edges.map(i => i.node) : []}
+        />
+      )
+    }}
   </Query>
 )
+
+CommunitiesGadgetWrapper.propTypes = {
+  t: PropTypes.func
+}
+
+export default CommunitiesGadgetWrapper

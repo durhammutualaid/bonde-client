@@ -25,7 +25,7 @@ const ShowCommunity = ({ match }) => {
         // TODO: add image community
         return (
           <div>
-            
+
             {myCommunity}
           </div>
         )
@@ -40,11 +40,12 @@ const CommunitiesDropdown = ({ t, loading, communities }) => (
   <Dropdown
     loading={loading}
     label={<ShowCommunityWithRouter />}
-    disabled={communities.length > 0 ? false : true}
+    disabled={!(communities.length > 0)}
   >
     {communities.map(c => {
       return (
         <DropdownItem
+          key={c.id}
           to={`/admin/${c.id}/chatbot`}
           component={Link}
         >
@@ -55,18 +56,24 @@ const CommunitiesDropdown = ({ t, loading, communities }) => (
   </Dropdown>
 )
 
+ShowCommunity.propTypes = {
+  match: PropTypes.object
+}
+
 CommunitiesDropdown.defaultProps = {
   communities: []
 }
 
 CommunitiesDropdown.propTypes = {
   communities: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
-    name: PropTypes.string
-  }))
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired
+  })).isRequired,
+  loading: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired
 }
 
-export default ({ t , props }) => (
+export default ({ t, props }) => ( // eslint-disable-line
   <Query query={userCommunitiesQuery}>
     {({ data, loading, error }) => {
       if (loading) return 'Loading...'

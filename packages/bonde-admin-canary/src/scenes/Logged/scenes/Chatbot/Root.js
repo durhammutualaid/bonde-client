@@ -18,11 +18,11 @@ export default withRouter(({ match, history }) => {
   }
 
   return (
-    <Page 
+    <Page
       renderTitle={() => <Header.Title>Chatbot</Header.Title>}
       renderMenuCommunity={() => <div>test</div>}
     >
-      <Query 
+      <Query
         query={ChatbotAPI.query.campaigns}
         variables={{ communityId: Number(match.params.id) }}
       >

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import {
-  IconBot,
+  IconBot
   // TODO: add import icons
   // IconSettings,
   // IconPage,
@@ -14,7 +14,7 @@ const items = [
   // TODO: add routes, icons and activeHandle
   // { name: 'chart', path: '/', icon: <IconChart color='white' />},
   // { name: 'pages', path: '/', icon:  <IconPage color='white' />},
-  { name: 'chatbot', path: `/admin/${1}/chatbot`, icon: <IconBot color='white'/>},
+  { name: 'chatbot', path: `/admin/${1}/chatbot`, icon: <IconBot color='white'/> }
   // { name: 'settings', path: '/', icon: <IconSettings color='white'/>}
 ]
 
@@ -40,7 +40,7 @@ MenuCommunity.propTypes = {
   }))
 }
 
-export default ({ t , props }) => (
+export default ({ t, props }) => (
   <MenuCommunity
     t={t}
     items={items}
