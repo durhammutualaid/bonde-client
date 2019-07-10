@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
 import {
   Text,
   Button,
@@ -42,6 +43,7 @@ const goToCanary = (row) => (
   </Button>
 )
 
+/* eslint-disable */
 const columns = [
   {
     field: 'image',
@@ -80,6 +82,7 @@ const columns = [
     )
   }
 ]
+/* eslint-enable */
 
 const CommunitiesGadget = ({ t, loading, communities }) => (
   <TableCardGadget
