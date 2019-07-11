@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import {
-  IconBot
+  IconBot,
+  IconSettings,
   // TODO: add import icons
-  // IconSettings,
   // IconPage,
   // IconChart
 } from './icons'
@@ -14,8 +14,8 @@ const items = [
   // TODO: add routes, icons and activeHandle
   // { name: 'chart', path: '/', icon: <IconChart color='white' />},
   // { name: 'pages', path: '/', icon:  <IconPage color='white' />},
-  { name: 'chatbot', path: `/admin/${1}/chatbot`, icon: <IconBot color='white'/> }
-  // { name: 'settings', path: '/', icon: <IconSettings color='white'/>}
+  { name: 'chatbot', path: `/admin/${1}/chatbot`, icon: <IconBot color='white'/> },
+  { name: 'settings', path: '/settings', icon: <IconSettings color='white'/>}
 ]
 
 const MenuCommunity = () => (
