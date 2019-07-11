@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import {
   IconBot,
-  IconSettings,
+  IconSettings
   // TODO: add import icons
   // IconPage,
   // IconChart
@@ -15,7 +15,7 @@ const items = [
   // { name: 'chart', path: '/', icon: <IconChart color='white' />},
   // { name: 'pages', path: '/', icon:  <IconPage color='white' />},
   { name: 'chatbot', path: `/admin/${1}/chatbot`, icon: <IconBot color='white'/> },
-  { name: 'settings', path: '/settings', icon: <IconSettings color='white'/>}
+  { name: 'settings', path: '/settings', icon: <IconSettings color='white'/> }
 ]
 
 const MenuCommunity = () => (

@@ -7,7 +7,7 @@ import {
 } from 'bonde-styleguide'
 import { Tutorial } from 'components'
 import { ToastContainer } from 'components/Notification'
-import { Page, Header } from 'components/PageLogged'
+import { Page } from 'components/PageLogged'
 import { Redirect } from 'services/router'
 import { Auth } from 'services/auth'
 import { UserCommunities, TrendingMobilizationsGadget } from './gadgets'

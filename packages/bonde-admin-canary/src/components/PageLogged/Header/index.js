@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import {
   Flexbox2 as Flexbox,
   Header as HeaderStyleguide,
-  IconColorful,
   Navbar,
   Spacing
 } from 'bonde-styleguide'
