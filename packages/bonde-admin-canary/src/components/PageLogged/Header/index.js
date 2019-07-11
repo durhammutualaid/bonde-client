@@ -14,12 +14,9 @@ import MenuCommunity from './MenuCommunity'
 import Tabs, { Tab } from './Tabs'
 import Title from './Title'
 import UserDropdown from './UserDropdown'
+import IconBonde from './icon-bonde'
 
-const Bonde = () => (
-  <Spacing margin={{ right: 15, bottom: 10 }}>
-    <IconColorful name='bonde' size={85} inverted />
-  </Spacing>
-)
+const Bonde = () => <IconBonde size={85} />
 
 const Header = ({
   renderTitle,
@@ -70,7 +67,11 @@ const Header = ({
       </Spacing>
     )}
 
-    {renderTitle ? renderTitle() : <div />}
+    {renderTitle && (
+      <div>
+        {renderTitle()}
+      </div>
+    )}
   </HeaderStyleguide>
 )
 

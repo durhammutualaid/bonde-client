@@ -44,7 +44,6 @@ export default class Home extends Component {
               : (
                 <Tutorial initialize={showTutorial}>
                   <Page
-                    renderTitle={() => (<Header.Title>{t('title')}</Header.Title>)}
                     wrapperHeaderComponent={({ children }) => (
                       <TutorialDialog
                         t={t}
