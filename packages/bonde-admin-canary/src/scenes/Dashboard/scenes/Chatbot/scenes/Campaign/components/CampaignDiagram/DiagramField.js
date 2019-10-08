@@ -80,6 +80,7 @@ class DiagramField extends React.Component {
         })
       case 'action':
         return new ActionMessageModel({
+          actionId: window.prompt('Informe o ActionID (identificar da widget de pressão)'),
           text: 'Escreva um texto pedindo e-mail do usuário.',
           validLabel: 'E-mail válido',
           invalidLabel: 'E-mail inválido'
