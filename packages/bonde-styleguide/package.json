@@ -9,7 +9,7 @@
     "babel-plugin-styled-components": "^1.10.6",
     "prop-types": "^15.7.2",
     "recharts": "^1.6.2",
-    "styled-components": "^4.3.2",
+    "styled-components": "^5.0.0",
     "webfontloader": "^1.6.28"
   },
   "scripts": {
